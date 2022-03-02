@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-        if (rb.velocity.x != 0)
+        if (Mathf.Abs(rb.velocity.x) >= 0.01f)
         {
             isWalking = true;
         }
@@ -283,7 +283,7 @@ public class PlayerController : MonoBehaviour
             {
                 canMove = false;
                 canFlip = false;
-                rb.velocity = new Vector2(dashSpeed * facingDirection, rb.velocity.y); //If second variable = 0, player won't fell down from high
+                rb.velocity = new Vector2(dashSpeed * facingDirection, 0); //If second variable = 0, player won't fell down from high
                 dashTimeLeft -= Time.deltaTime;
 
                 if (Mathf.Abs(transform.position.x - lastImageXpos) > distanceBetweenImages)
@@ -392,6 +392,16 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed);
             }
         }
+    }
+
+    public void DisableFlip()
+    {
+        canFlip = false;
+    }
+
+    public void EnableFlip()
+    {
+        canFlip = true;
     }
 
     private void Flip()
