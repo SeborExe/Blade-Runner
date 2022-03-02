@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1628d3769e63db34fa88825edb09b426
+guid: 31943e48ad138634a9b038a2cf0486e5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rogue_Run1_0
+      name: Character 1 Ledge Climb_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,41 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60303b9aab928354e9866f250e9ed2e6
-      internalID: 1561855826
+      spriteID: 9091991226790064493f1437dff66f89
+      internalID: -806154290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rogue_Run1_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6abcb1bd31d9e744868b49c9fdeb4a9
-      internalID: -468027985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rogue_Run1_2
+      name: Character 1 Ledge Climb_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,41 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34767fe744afdf4429d54cafc0f393a5
-      internalID: 48408541
+      spriteID: 7803e6a2a6e938d4ca011b519ee8eab3
+      internalID: -1046889100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rogue_Run1_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fc41a07d79cb864cb2836b2af758b87
-      internalID: -840632416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rogue_Run1_4
+      name: Character 1 Ledge Climb_2
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,41 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8e44fac7f5735c4aa56789eac8c678b
-      internalID: 32802289
+      spriteID: 5aebf8ed8612ed4419d638a93236f261
+      internalID: -1316888137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rogue_Run1_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4f1af5f59cd5f44ba9be0dd074bc5dc
-      internalID: 1569741104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rogue_Run1_6
+      name: Character 1 Ledge Climb_3
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,41 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0cba6d138b5c2343ae8d0bb800f992e
-      internalID: -935523013
+      spriteID: 4b8db3028ef027e44b870332813a4461
+      internalID: -876054320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rogue_Run1_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1da2b856994359345a3507d380e92a97
-      internalID: 1686398293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rogue_Run1_8
+      name: Character 1 Ledge Climb_4
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,41 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f808779f52966fc4bb72abf7cebc8fe0
-      internalID: -665991043
+      spriteID: ea40ee8877596d44497f24c51353ca69
+      internalID: -139907244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rogue_Run1_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdd72b5c2919c4342b9449d83ca8b5b4
-      internalID: 1556427824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rogue_Run1_10
+      name: Character 1 Ledge Climb_5
       rect:
         serializedVersion: 2
         x: 640
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,20 +235,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c0a9eaa05a9bd946be02a779f3ba7eb
-      internalID: -900139473
+      spriteID: 52cc4fffd1b6d76439d6205d131b2cc8
+      internalID: 466328034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rogue_Run1_11
+      name: Character 1 Ledge Climb_6
       rect:
         serializedVersion: 2
-        x: 704
+        x: 768
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a78990ac57ab1e246b12a750cba85ea1
-      internalID: 1796839157
+      spriteID: 5a9a0be53455e8e489001eaebe0e1b18
+      internalID: 1561838545
       vertices: []
       indices: 
       edges: []
@@ -378,18 +273,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rogue_Run1_10: -900139473
-      Rogue_Run1_3: -840632416
-      Rogue_Run1_8: -665991043
-      Rogue_Run1_11: 1796839157
-      Rogue_Run1_0: 1561855826
-      Rogue_Run1_2: 48408541
-      Rogue_Run1_5: 1569741104
-      Rogue_Run1_4: 32802289
-      Rogue_Run1_9: 1556427824
-      Rogue_Run1_6: -935523013
-      Rogue_Run1_7: 1686398293
-      Rogue_Run1_1: -468027985
+      Character 1 Ledge Climb_3: -876054320
+      Character 1 Ledge Climb_5: 466328034
+      Character 1 Ledge Climb_0: -806154290
+      Character 1 Ledge Climb_6: 1561838545
+      Character 1 Ledge Climb_2: -1316888137
+      Character 1 Ledge Climb_1: -1046889100
+      Character 1 Ledge Climb_4: -139907244
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
