@@ -8298,7 +8298,7 @@ GameObject:
   - component: {fileID: 937650438}
   - component: {fileID: 937650439}
   - component: {fileID: 937650440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -8322,7 +8322,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8391,7 +8391,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1065756323
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -1999471341, guid: 99ea55ec64f41614eb044bb1f4f7d4cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8504,7 +8504,7 @@ MonoBehaviour:
   attack1HitBoxPos: {fileID: 2112297336}
   whatIsDamageable:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!1 &1237506093
 GameObject:
   m_ObjectHideFlags: 0
@@ -8793,7 +8793,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7783211, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8922,7 +8922,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1240461329
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -52351,3 +52351,64 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &5383306092859624951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5383306093222031843, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: HitParticle
+      value: 
+      objectReference: {fileID: 2216859086342246666, guid: a501e3e466e48904ab5623ea54d32f87, type: 3}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031844, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383306093222031845, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
+      propertyPath: m_Name
+      value: Combat Dummy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99ffe96a43b97344d83ad32015b71d5b, type: 3}
