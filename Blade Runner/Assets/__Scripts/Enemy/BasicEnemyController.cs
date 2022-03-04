@@ -13,6 +13,36 @@ public class BasicEnemyController : MonoBehaviour
 
     private State currentState;
 
+    private bool groundDetected, wallDetected;
+    private int facingDirection;
+
+    private Vector2 movement;
+
+    [SerializeField]
+    private Transform groundCheck, wallCheck;
+
+    [SerializeField]
+    private LayerMask whatIsGround;
+
+    [SerializeField]
+    private float groundCheckDistance, wallCheckDistance, movementSpeed, maxHealth, knockbackDuration;
+
+    [SerializeField]
+    Vector2 knockbackSpeed;
+
+    private float currentHealth, knockbackStartTime;
+
+    private GameObject alive;
+    private Rigidbody2D aliveRb;
+
+    private void Start()
+    {
+        alive = transform.Find("Alive").gameObject;
+        aliveRb = alive.GetComponent<Rigidbody2D>();
+
+        facingDirection = 1;
+    }
+
     private void Update()
     {
         switch (currentState)
@@ -39,7 +69,18 @@ public class BasicEnemyController : MonoBehaviour
 
     private void UpdateWalkingState()
     {
+        groundDetected = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+        wallDetected = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
 
+        if (!groundDetected || wallDetected)
+        {
+            Flip();
+        }
+        else
+        {
+            movement.Set(movementSpeed * facingDirection, aliveRb.velocity.y);
+            aliveRb.velocity = movement;
+        }
     }
 
     private void ExitWalkingState()
@@ -114,5 +155,16 @@ public class BasicEnemyController : MonoBehaviour
         }
 
         currentState = state;
+    }
+
+    private void Flip()
+    {
+        facingDirection *= -1;
+        alive.transform.Rotate(0.0f, 180.0f, 0.0f);
+    }
+
+    private void Damage(float[] attackDetails)
+    {
+
     }
 }
