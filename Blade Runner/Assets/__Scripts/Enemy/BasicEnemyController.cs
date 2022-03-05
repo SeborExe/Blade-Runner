@@ -6,7 +6,7 @@ public class BasicEnemyController : MonoBehaviour
 {
     private enum State
     {
-        Walking,
+        Moving,
         Knockback,
         Dead
     }
@@ -14,7 +14,7 @@ public class BasicEnemyController : MonoBehaviour
     private State currentState;
 
     private bool groundDetected, wallDetected;
-    private int facingDirection;
+    private int facingDirection, damageDirection;
 
     private Vector2 movement;
 
@@ -34,12 +34,18 @@ public class BasicEnemyController : MonoBehaviour
 
     private GameObject alive;
     private Rigidbody2D aliveRb;
+    private Animator aliveAnim;
+
+    [SerializeField]
+    private GameObject hitParticle, deadChunkParticle, deadBloodParticle;
 
     private void Start()
     {
         alive = transform.Find("Alive").gameObject;
         aliveRb = alive.GetComponent<Rigidbody2D>();
+        aliveAnim = alive.GetComponent<Animator>();
 
+        currentHealth = maxHealth;
         facingDirection = 1;
     }
 
@@ -47,7 +53,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         switch (currentState)
         {
-            case State.Walking:
+            case State.Moving:
                 UpdateWalkingState();
                 break;
 
@@ -91,23 +97,32 @@ public class BasicEnemyController : MonoBehaviour
     //-----------Knockback state---------------------------------------------------------------------//
     private void EnterKnockbackState()
     {
-
+        knockbackStartTime = Time.time;
+        movement.Set(knockbackSpeed.x * damageDirection, knockbackSpeed.y);
+        aliveRb.velocity = movement;
+        aliveAnim.SetBool("Knockback", true);
     }
 
     private void UpdateKnockbackState()
     {
-
+        if (Time.time >= knockbackStartTime + knockbackDuration)
+        {
+            SwitchState(State.Moving);
+        }
     }
 
     private void ExitKnockbackState()
     {
-
+        aliveAnim.SetBool("Knockback", false);
     }
 
     //-----------Dead state---------------------------------------------------------------------//
     private void EnterDeadState()
     {
+        Instantiate(deadChunkParticle, alive.transform.position, deadChunkParticle.transform.rotation);
+        Instantiate(deadBloodParticle, alive.transform.position, deadBloodParticle.transform.rotation);
 
+        Destroy(gameObject);
     }
 
     private void UpdateDeadState()
@@ -126,7 +141,7 @@ public class BasicEnemyController : MonoBehaviour
     {
         switch (currentState)
         {
-            case State.Walking:
+            case State.Moving:
                 ExitWalkingState();
                 break;
 
@@ -141,7 +156,7 @@ public class BasicEnemyController : MonoBehaviour
 
         switch (state)
         {
-            case State.Walking:
+            case State.Moving:
                 EnterWalkingState();
                 break;
 
@@ -165,6 +180,34 @@ public class BasicEnemyController : MonoBehaviour
 
     private void Damage(float[] attackDetails)
     {
+        currentHealth -= attackDetails[0];
 
+        Instantiate(hitParticle, alive.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+
+        if (attackDetails[1] > alive.transform.position.x)
+        {
+            damageDirection = -1;
+        }
+        else
+        {
+            damageDirection = 1;
+        }
+
+        //Hit particles
+
+        if (currentHealth > 0.0f)
+        {
+            SwitchState(State.Knockback);
+        }
+        else if (currentHealth <= 0.0f)
+        {
+            SwitchState(State.Dead);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(groundCheck.position, new Vector2(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
+        Gizmos.DrawLine(wallCheck.position, new Vector2(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
     }
 }

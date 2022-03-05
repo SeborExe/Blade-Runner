@@ -10,7 +10,9 @@ public class PlayerCombatController : MonoBehaviour
 
     [SerializeField]
     private float inputTimer, attack1Radius, attack1Damage;
-    private float lastInputTime = Mathf.NegativeInfinity; 
+    private float lastInputTime = Mathf.NegativeInfinity;
+
+    private float[] attackDetails = new float[2];
 
     [SerializeField]
     private Transform attack1HitBoxPos;
@@ -70,9 +72,12 @@ public class PlayerCombatController : MonoBehaviour
     {
         Collider2D[] detectedObject = Physics2D.OverlapCircleAll(attack1HitBoxPos.position, attack1Radius, whatIsDamageable); //point, radius, layerMask
 
+        attackDetails[0] = attack1Damage;
+        attackDetails[1] = transform.position.x;
+
         foreach (Collider2D collider in detectedObject)
         {
-            collider.transform.parent.SendMessage("Damage", attack1Damage);
+            collider.transform.parent.SendMessage("Damage", attackDetails);
 
             //Instantate hit particle
 
