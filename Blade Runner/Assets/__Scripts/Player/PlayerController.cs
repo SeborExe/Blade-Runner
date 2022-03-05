@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     public float distanceBetweenImages;
     public float dashCooldown;
+    public float knockbackDuration;
+    public Vector2 knockbackSpeed;
 
     [Header("Definiowane dynamicznie")]
     private Rigidbody2D rb;
@@ -66,7 +68,8 @@ public class PlayerController : MonoBehaviour
     private float dashTimeLeft;
     private float lastImageXpos;
     private float lastDash = -100f;
-
+    private bool knockback;
+    private float knockbackStartTime;
 
     void Start()
     {
@@ -87,6 +90,7 @@ public class PlayerController : MonoBehaviour
         CheckJump();
         CheckLedgeClimb();
         CheckDash();
+        CheckKnockback();
     }
 
     private void FixedUpdate()
@@ -107,6 +111,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool GetDashStatus()
+    {
+        return isDashing;
+    }
+
     private void CheckLedgeClimb()
     {
         if (ledgeDetected && !canClimbLedge)
@@ -120,8 +129,8 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                ledgePos1 = new Vector2(Mathf.Floor(ledgePosBot.x - wallCheckDistance) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
-                ledgePos2 = new Vector2(Mathf.Floor(ledgePosBot.x - wallCheckDistance) - ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset2);
+                ledgePos1 = new Vector2(Mathf.Ceil(ledgePosBot.x - wallCheckDistance) + ledgeClimbXOffset1, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset1);
+                ledgePos2 = new Vector2(Mathf.Ceil(ledgePosBot.x - wallCheckDistance) - ledgeClimbXOffset2, Mathf.Floor(ledgePosBot.y) + ledgeClimbYOffset2);
             }
 
             canMove = false;
@@ -381,11 +390,11 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        if (!isGrounded && !isWallSliding && movementInputDirection == 0)
+        if (!isGrounded && !isWallSliding && movementInputDirection == 0 && !knockback)
         {
             rb.velocity = new Vector2(rb.velocity.x * airDragMultiplier, rb.velocity.y);
         }
-        else if (canMove)
+        else if (canMove && !knockback)
         {
             rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
         }
@@ -411,11 +420,27 @@ public class PlayerController : MonoBehaviour
 
     private void Flip()
     {
-        if (!isWallSliding && canFlip)
+        if (!isWallSliding && canFlip && !knockback)
         {
             facingDirection *= -1;
             isFacingRight = !isFacingRight;
             transform.Rotate(0.0f, 180.0f, 0.0f);
+        }
+    }
+
+    public void Knockback(int direction)
+    {
+        knockback = true;
+        knockbackStartTime = Time.time;
+        rb.velocity = new Vector2(knockbackSpeed.x * direction, knockbackSpeed.y);
+    }
+
+    private void CheckKnockback()
+    {
+        if (Time.time >= knockbackStartTime + knockbackDuration && knockback)
+        {
+            knockback = false;
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
         }
     }
 
