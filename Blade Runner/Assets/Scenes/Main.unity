@@ -8352,6 +8352,8 @@ MonoBehaviour:
   idleStateData: {fileID: 11400000, guid: 99d07570d3dc7624c9997a87ba978f44, type: 2}
   moveStateData: {fileID: 11400000, guid: 87114bb2ba274654396473b191098ced, type: 2}
   playerDetectedData: {fileID: 11400000, guid: 2eff851aad641d441b9135652076fe33, type: 2}
+  chargeStateData: {fileID: 11400000, guid: 5c57656126e93c947a5087d02053bbfe, type: 2}
+  lookForPlayerStateData: {fileID: 11400000, guid: 338ec083dd436084d91dd988f83109ab, type: 2}
 --- !u!4 &937650437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6486032519474345872, guid: 6a1e7a6e8b433c6489ac79ae03c85d66, type: 3}
@@ -8865,7 +8867,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7781541, y: 1}
+    m_SensorSize: {x: 1.778154, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
