@@ -37,6 +37,9 @@ public class E1_ChargeState : ChargeState
 
         else if (isChargeTimeOver)
         {
+
+            //attack state
+
             if (isPlayerInMinAgroRange)
             {
                 stateMachine.ChangeState(enemy.playerDetectedState);
