@@ -8354,6 +8354,8 @@ MonoBehaviour:
   playerDetectedData: {fileID: 11400000, guid: 2eff851aad641d441b9135652076fe33, type: 2}
   chargeStateData: {fileID: 11400000, guid: 5c57656126e93c947a5087d02053bbfe, type: 2}
   lookForPlayerStateData: {fileID: 11400000, guid: 338ec083dd436084d91dd988f83109ab, type: 2}
+  meleeAttackStateData: {fileID: 11400000, guid: d304f208def4b734f9267e53bfed5ca9, type: 2}
+  meleeAttackPosition: {fileID: 2009506249}
 --- !u!4 &937650437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6486032519474345872, guid: 6a1e7a6e8b433c6489ac79ae03c85d66, type: 3}
@@ -8465,6 +8467,7 @@ GameObject:
   - component: {fileID: 1160801150}
   - component: {fileID: 1160801149}
   - component: {fileID: 1160801148}
+  - component: {fileID: 1160801152}
   m_Layer: 7
   m_Name: Alive
   m_TagString: Enemy
@@ -8488,6 +8491,7 @@ Transform:
   - {fileID: 1033188143}
   - {fileID: 1399132563}
   - {fileID: 1911528103}
+  - {fileID: 2009506249}
   m_Father: {fileID: 693743097}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8610,6 +8614,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1160801152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160801146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b1b18bec0aa2f4f98ca828de4c51b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1399132562
 GameObject:
   m_ObjectHideFlags: 0
@@ -8867,7 +8883,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778154, y: 1}
+    m_SensorSize: {x: 1.7779661, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9360,6 +9376,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1160801147}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2009506248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009506249}
+  m_Layer: 7
+  m_Name: MeleeAttackPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2009506249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009506248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.35, y: -0.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1160801147}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2136435909
 GameObject:
