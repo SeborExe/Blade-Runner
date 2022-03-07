@@ -8349,12 +8349,15 @@ MonoBehaviour:
   wallCheck: {fileID: 1033188143}
   ledgeCheck: {fileID: 1108524178}
   playerCheck: {fileID: 1911528103}
+  groundCheck: {fileID: 2072104713}
   idleStateData: {fileID: 11400000, guid: 99d07570d3dc7624c9997a87ba978f44, type: 2}
   moveStateData: {fileID: 11400000, guid: 87114bb2ba274654396473b191098ced, type: 2}
   playerDetectedData: {fileID: 11400000, guid: 2eff851aad641d441b9135652076fe33, type: 2}
   chargeStateData: {fileID: 11400000, guid: 5c57656126e93c947a5087d02053bbfe, type: 2}
   lookForPlayerStateData: {fileID: 11400000, guid: 338ec083dd436084d91dd988f83109ab, type: 2}
   meleeAttackStateData: {fileID: 11400000, guid: d304f208def4b734f9267e53bfed5ca9, type: 2}
+  stunStateData: {fileID: 11400000, guid: 8c4ec3cae5db7584bbc6a5bae83b3da0, type: 2}
+  deadStateData: {fileID: 11400000, guid: c6dc55c772972884da025b145fc71d57, type: 2}
   meleeAttackPosition: {fileID: 2009506249}
 --- !u!4 &937650437 stripped
 Transform:
@@ -8492,6 +8495,7 @@ Transform:
   - {fileID: 1399132563}
   - {fileID: 1911528103}
   - {fileID: 2009506249}
+  - {fileID: 2072104713}
   m_Father: {fileID: 693743097}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8883,7 +8887,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7779661, y: 1}
+    m_SensorSize: {x: 1.7781541, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9407,6 +9411,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1160801147}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2072104712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2072104713}
+  m_Layer: 7
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2072104713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072104712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.946, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1160801147}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2136435909
 GameObject:

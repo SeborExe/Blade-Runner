@@ -12,6 +12,9 @@ public class PlayerCombatController : MonoBehaviour
     private float inputTimer, attack1Radius, attack1Damage;
     private float lastInputTime = Mathf.NegativeInfinity;
 
+    [SerializeField]
+    private float stunDamageAmount = 1f;
+
     private AttackDetails attackDetails;
 
     [SerializeField]
@@ -78,6 +81,7 @@ public class PlayerCombatController : MonoBehaviour
 
         attackDetails.damageAmount = attack1Damage;
         attackDetails.position = transform.position;
+        attackDetails.stunDamageAmount = stunDamageAmount;
 
         foreach (Collider2D collider in detectedObject)
         {
