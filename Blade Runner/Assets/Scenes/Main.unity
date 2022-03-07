@@ -8393,6 +8393,37 @@ Transform:
   m_Father: {fileID: 1851256202}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &640601808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640601809}
+  m_Layer: 7
+  m_Name: RangeAttackPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &640601809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640601808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: -0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1851256202}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693743096
 GameObject:
   m_ObjectHideFlags: 0
@@ -9455,6 +9486,7 @@ Transform:
   - {fileID: 886083109}
   - {fileID: 586831019}
   - {fileID: 363419215}
+  - {fileID: 640601809}
   m_Father: {fileID: 2039969851}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9764,7 +9796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039969850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.21, y: 8.12, z: 0}
+  m_LocalPosition: {x: -15.31, y: 8.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9796,7 +9828,10 @@ MonoBehaviour:
   lookForPlayerStateData: {fileID: 11400000, guid: 2bd7c1ecd742a7241953b12b9d308026, type: 2}
   stunStateData: {fileID: 11400000, guid: ac348ca6694e2a0489e7f75dc474042d, type: 2}
   deadStateData: {fileID: 11400000, guid: 5a726bd87bf43f746880b51d446a2691, type: 2}
+  dodgeStateData: {fileID: 11400000, guid: 541258c4f6403a048a5d79142a924b71, type: 2}
+  rangeAttackStateData: {fileID: 11400000, guid: 4de76f0dfbb93a2458f6b1332f4b2595, type: 2}
   meleeAttackPosition: {fileID: 363419215}
+  rangeAttackPosition: {fileID: 640601809}
 --- !u!1 &2072104712
 GameObject:
   m_ObjectHideFlags: 0
