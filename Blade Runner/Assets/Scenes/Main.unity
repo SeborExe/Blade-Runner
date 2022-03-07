@@ -8357,6 +8357,7 @@ MonoBehaviour:
   lookForPlayerStateData: {fileID: 11400000, guid: 338ec083dd436084d91dd988f83109ab, type: 2}
   meleeAttackStateData: {fileID: 11400000, guid: d304f208def4b734f9267e53bfed5ca9, type: 2}
   stunStateData: {fileID: 11400000, guid: 8c4ec3cae5db7584bbc6a5bae83b3da0, type: 2}
+  deadStateData: {fileID: 11400000, guid: c6dc55c772972884da025b145fc71d57, type: 2}
   meleeAttackPosition: {fileID: 2009506249}
 --- !u!4 &937650437 stripped
 Transform:
