@@ -28,8 +28,7 @@ public class Enemy1 : Entity
     [SerializeField]
     private D_StunState stunStateData;
     [SerializeField]
-    private D_DeadStateData deadStateData;
-
+    private D_DeadState deadStateData;
 
     [SerializeField]
     private Transform meleeAttackPosition;
@@ -69,6 +68,12 @@ public class Enemy1 : Entity
         else if (isStunned && stateMachine.currentState != stunState)
         {
             stateMachine.ChangeState(stunState);
+        }
+
+        else if (!CheckPlayerInMinAgroRange())
+        {
+            lookForPlayerState.SetTurnImmediatly(true);
+            stateMachine.ChangeState(lookForPlayerState);
         }
     }
 }

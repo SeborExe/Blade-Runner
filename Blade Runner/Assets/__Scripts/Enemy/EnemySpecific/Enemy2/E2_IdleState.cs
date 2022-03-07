@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_DeadState : DeadState
+public class E2_IdleState : IdleState
 {
-    private Enemy1 enemy;
+    private Enemy2 enemy;
 
-    public E1_DeadState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_DeadState stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
+    public E2_IdleState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData, Enemy2 enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
@@ -29,6 +29,16 @@ public class E1_DeadState : DeadState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (isPlayerInMinAgroRange)
+        {
+            stateMachine.ChangeState(enemy.playerDetectedState);
+        }
+
+        if (isIdleTimeOver)
+        {
+            stateMachine.ChangeState(enemy.moveState);
+        }
     }
 
     public override void PhysicsUpdate()

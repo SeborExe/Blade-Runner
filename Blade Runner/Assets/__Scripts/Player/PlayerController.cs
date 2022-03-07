@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private int amoutOfJumpsLeft;
     private bool isTouchingWall;
     private bool isWallSliding;
-    private int facingDirection = 1;
+    public int facingDirection = 1;
     private float jumpTimer;
     private bool isAttemptingToJump;
     private bool checkJumpMultiplier;
