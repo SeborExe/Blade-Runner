@@ -109,6 +109,13 @@ public class Entity : MonoBehaviour
     {
         velocityWorkSpace.Set(rb.velocity.x, velocity);
         rb.velocity = velocityWorkSpace;
+
+        //Flip after take damage
+        //if (facingDirection == GameObject.Find("Player").GetComponent<PlayerController>().facingDirection)
+        //{
+        //    //Flip();
+        //    Invoke("Flip", 0.15f);
+        //}
     }
 
     public virtual void ResetStunResistance()
