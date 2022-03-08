@@ -30,7 +30,7 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-        if (input.x != 0f)
+        if (xinput != 0f)
         {
             stateMachine.ChangeState(player.MoveState);
         }
