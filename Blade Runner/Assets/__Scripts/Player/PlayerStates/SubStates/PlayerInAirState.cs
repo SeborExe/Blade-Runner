@@ -11,6 +11,7 @@ public class PlayerInAirState : PlayerState
     private bool coyoteTime;
     private bool isJumping;
     private bool jumpInputStop;
+    private bool isTouchingWall;
 
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -21,6 +22,7 @@ public class PlayerInAirState : PlayerState
         base.DoChecks();
 
         isGrounded = player.CheckIfGrounded();
+        isTouchingWall = player.CheckIfTouchingWall();
     }
 
     public override void Enter()
@@ -53,6 +55,11 @@ public class PlayerInAirState : PlayerState
         else if (jumpInput && player.JumpState.CanJump())
         {
             stateMachine.ChangeState(player.JumpState);
+        }
+
+        else if (isTouchingWall && xInput == player.FacingDirection)
+        {
+            stateMachine.ChangeState(player.WallSlideState);
         }
         else
         {
