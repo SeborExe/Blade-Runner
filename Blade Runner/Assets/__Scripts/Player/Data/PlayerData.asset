@@ -22,8 +22,8 @@ MonoBehaviour:
   wallJumpVelocity: 20
   wallJumpTime: 0.4
   wallJumpAngle: {x: 1, y: 2}
-  startOffset: {x: 0, y: 0}
-  stopOffset: {x: 0, y: 0}
+  startOffset: {x: 0.4, y: 0.9}
+  stopOffset: {x: 0.5, y: 0.75}
   groundCheckRadius: 0.3
   wallCheckDistance: 0.5
   whatIsGround:
