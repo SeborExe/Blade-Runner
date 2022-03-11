@@ -30,9 +30,17 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-        if (xinput != 0f && !isExitingState)
+        if (!isExitingState)
         {
-            stateMachine.ChangeState(player.MoveState);
+            if (xinput != 0f)
+            {
+                stateMachine.ChangeState(player.MoveState);
+            }
+
+            else if (yInput == -1)
+            {
+                stateMachine.ChangeState(player.CrouchIdleState);
+            }
         }
     }
 
