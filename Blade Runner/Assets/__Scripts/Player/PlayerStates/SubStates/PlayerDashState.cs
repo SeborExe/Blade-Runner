@@ -6,10 +6,13 @@ public class PlayerDashState : PlayerAbilityState
 {
     public bool CanDash { get; private set; }
     private bool isHolding;
+    private bool dashInputStop;
 
     private float lastDashTime;
 
     private Vector2 dashDirection;
+    private Vector2 dashDirectionInput;
+    private Vector2 lastAfterImagePos;
 
     public PlayerDashState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -26,11 +29,18 @@ public class PlayerDashState : PlayerAbilityState
 
         Time.timeScale = playerData.holdTimeScale;
         startTime = Time.unscaledTime;
+
+        player.DashDirectionIndicator.gameObject.SetActive(true);
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        if (player.currentVelocity.y > 0)
+        {
+            player.SetVelocityY(player.currentVelocity.y * playerData.dashEndYMultiplier);
+        }
     }
 
     public override void LogicUpdate()
@@ -39,10 +49,61 @@ public class PlayerDashState : PlayerAbilityState
 
         if(!isExitingState)
         {
+            player.Anim.SetFloat("yVelocity", player.currentVelocity.y);
+            player.Anim.SetFloat("xVelocity", Mathf.Abs(player.currentVelocity.x));
+
             if (isHolding)
             {
+                dashDirectionInput = player.InputHandler.DashDirectionInput;
+                dashInputStop = player.InputHandler.DashInputStop;
 
+                if (dashDirectionInput != Vector2.zero)
+                {
+                    dashDirection = dashDirectionInput;
+                    dashDirection.Normalize();
+                }
+
+                float angle = Vector2.SignedAngle(Vector2.right, dashDirection);
+                player.DashDirectionIndicator.rotation = Quaternion.Euler(0f, 0f, angle - 45f);
+
+                if (dashInputStop || Time.unscaledTime >= startTime + playerData.maxHoldTime)
+                {
+                    isHolding = false;
+                    Time.timeScale = 1f;
+                    startTime = Time.timeScale;
+                    player.CheckIfSchouldFlip(Mathf.RoundToInt(dashDirection.x));
+                    player.RB.drag = playerData.drag;
+                    player.SetVelocity(playerData.dashVelocity, dashDirection);
+                    player.DashDirectionIndicator.gameObject.SetActive(false);
+                    PlaceAfterImage();
+                }
             }
+            else
+            {
+                player.SetVelocity(playerData.dashVelocity, dashDirection);
+                CheckIfSchouldPlaceAfterImage();
+
+                if (Time.time >= startTime + playerData.dashTime)
+                {
+                    player.RB.drag = 0f;
+                    isAbilityDone = true;
+                    lastDashTime = Time.time;
+                }
+            }
+        }
+    }
+
+    private void PlaceAfterImage()
+    {
+        PlayerAfterImagePool.Instance.GetFromPool();
+        lastAfterImagePos = player.transform.position;
+    }
+
+    private void CheckIfSchouldPlaceAfterImage()
+    {
+        if (Vector2.Distance(player.transform.position, lastAfterImagePos) >= playerData.distBetweenAfterImages)
+        {
+            PlaceAfterImage();
         }
     }
 
