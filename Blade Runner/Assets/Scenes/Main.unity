@@ -10447,6 +10447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf8e7fcbb8ddb04684ff25dcb4754b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: c4fd50d8a30f3894daa4b244d0fea9d1, type: 2}
 --- !u!1 &693743096
 GameObject:
   m_ObjectHideFlags: 0
@@ -11282,7 +11283,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1422250452
@@ -11523,7 +11524,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7769157, y: 1}
+    m_SensorSize: {x: 1.7766991, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
