@@ -11019,15 +11019,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1065756323
+  m_SortingLayer: 5
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -11190,6 +11190,7 @@ GameObject:
   - component: {fileID: 1422250449}
   - component: {fileID: 1422250451}
   - component: {fileID: 1422250450}
+  - component: {fileID: 1422250452}
   m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
@@ -11270,20 +11271,32 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1065756323
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1422250452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422250448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e1b1a2ee3fc514781907bf5f0335da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1543551815
 GameObject:
   m_ObjectHideFlags: 0
@@ -11510,7 +11523,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7774006, y: 1}
+    m_SensorSize: {x: 1.7769157, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12316,6 +12329,7 @@ GameObject:
   - component: {fileID: 2108243892}
   - component: {fileID: 2108243891}
   - component: {fileID: 2108243895}
+  - component: {fileID: 2108243896}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -12635,6 +12649,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &2108243896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108243887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a288accd681ab3c48a757f3726b85e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 640792744}
 --- !u!1 &2136435909
 GameObject:
   m_ObjectHideFlags: 0
