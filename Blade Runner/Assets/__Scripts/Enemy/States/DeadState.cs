@@ -20,8 +20,8 @@ public class DeadState : State
     {
         base.Enter();
 
-        GameObject.Instantiate(stateData.deathBlookParticles, entity.aliveGO.transform.position, stateData.deathBlookParticles.transform.rotation);
-        GameObject.Instantiate(stateData.deadthChunkParticles, entity.aliveGO.transform.position, stateData.deadthChunkParticles.transform.rotation);
+        GameObject.Instantiate(stateData.deathBlookParticles, entity.transform.position, stateData.deathBlookParticles.transform.rotation);
+        GameObject.Instantiate(stateData.deadthChunkParticles, entity.transform.position, stateData.deadthChunkParticles.transform.rotation);
 
         entity.gameObject.SetActive(false);
     }
