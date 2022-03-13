@@ -10512,7 +10512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640792743}
   - component: {fileID: 640792744}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Sword1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10545,10 +10545,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 640792742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf8e7fcbb8ddb04684ff25dcb4754b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d457ed73a2835b4380a64af6803ef2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: c4fd50d8a30f3894daa4b244d0fea9d1, type: 2}
+  weaponData: {fileID: 11400000, guid: 04913055749081e4398cd83756cf99c6, type: 2}
 --- !u!1 &693743096
 GameObject:
   m_ObjectHideFlags: 0
@@ -10725,7 +10725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975126394}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11088,7 +11088,8 @@ GameObject:
   - component: {fileID: 1206525896}
   - component: {fileID: 1206525895}
   - component: {fileID: 1206525897}
-  m_Layer: 9
+  - component: {fileID: 1206525898}
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11179,7 +11180,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1206525897
@@ -11192,7 +11193,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -11208,6 +11209,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &1206525898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206525893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81a03d920aeeab47b91d559d23aaf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1222540063
 GameObject:
   m_ObjectHideFlags: 0
@@ -11336,6 +11349,7 @@ GameObject:
   - component: {fileID: 1384609268}
   - component: {fileID: 1384609271}
   - component: {fileID: 1384609270}
+  - component: {fileID: 1384609272}
   m_Layer: 7
   m_Name: CombatTestDummy
   m_TagString: Enemy
@@ -11477,6 +11491,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9286816, y: 1.8242116}
   m_EdgeRadius: 0
+--- !u!114 &1384609272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384609266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a3f4af35a6f744d86858483bff1c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitParticles: {fileID: 2216859086342246666, guid: a501e3e466e48904ab5623ea54d32f87, type: 3}
 --- !u!1 &1399132562
 GameObject:
   m_ObjectHideFlags: 0
@@ -11520,7 +11547,7 @@ GameObject:
   - component: {fileID: 1422250451}
   - component: {fileID: 1422250450}
   - component: {fileID: 1422250452}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11852,7 +11879,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.75, y: 1}
+    m_SensorSize: {x: 1.7769157, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

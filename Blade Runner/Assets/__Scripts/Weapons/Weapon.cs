@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField]
-    private SO_WeaponData weaponData;
+    protected SO_WeaponData weaponData;
 
     protected Animator baseAnimator;
     protected Animator weaponAnimator;
@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
 
     protected int attackCounter;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         baseAnimator = transform.Find("Base").GetComponent<Animator>();
         weaponAnimator = transform.Find("Weapon").GetComponent<Animator>();
@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        if (attackCounter >= weaponData.movementSpeed.Length)
+        if (attackCounter >= weaponData.amoutOfAttacks)
         {
             attackCounter = 0;
         }
