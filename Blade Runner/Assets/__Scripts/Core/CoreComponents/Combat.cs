@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Combat : CoreComponent, IDamagable, IKnockbackable
 {
+    [SerializeField] private float maxKnockbackTtime = 0.2f;
+
     private bool isKnockbackActive;
     private float knockbackStartTime;
 
-    public void LogicUpdate()
+    public override void LogicUpdate()
     {
         CheckKnockback();
     }
@@ -27,7 +29,7 @@ public class Combat : CoreComponent, IDamagable, IKnockbackable
 
     private void CheckKnockback()
     {
-        if (isKnockbackActive && core.Movement.currentVelocity.y <= 0.01f && core.CollisionSenses.Ground)
+        if (isKnockbackActive && ((core.Movement.currentVelocity.y <= 0.01f && core.CollisionSenses.Ground) || Time.time >= knockbackStartTime + maxKnockbackTtime))
         {
             isKnockbackActive = false;
             core.Movement.CanSetVelocity = true;
