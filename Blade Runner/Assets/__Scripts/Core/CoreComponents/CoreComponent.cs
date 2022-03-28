@@ -13,12 +13,13 @@ public class CoreComponent : MonoBehaviour, ILogicUpdate
         if (core == null)
         {
             Debug.LogError("There is no Core in the parent");
-            core.AddComponent(this);
         }
+
+        core.AddComponent(this);
     }
 
     public virtual void LogicUpdate()
     {
-
+ 
     }
 }
