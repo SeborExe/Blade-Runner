@@ -39,4 +39,10 @@ public class Core : MonoBehaviour
 
         return comp;
     }
+
+    public T GetCoreComponent<T>(ref T value) where T:CoreComponent
+    {
+        value = GetCoreComponent<T>();
+        return value;
+    }
 }

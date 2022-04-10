@@ -5,6 +5,10 @@ using System.Linq;
 
 public class AggresiveWeapon : Weapon
 {
+    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+
+    private Movement movement;
+
     protected SO_AggresiveWeaponData aggresiveWeaponData;
 
     private List<IDamagable> detectedDamagable = new List<IDamagable>();
@@ -42,7 +46,7 @@ public class AggresiveWeapon : Weapon
 
         foreach (IKnockbackable item in detectedKnockbackable.ToList())
         {
-            item.Knockback(details.knockbackAngle, details.knockbackStrength, core.Movement.FacingDirection);
+            item.Knockback(details.knockbackAngle, details.knockbackStrength, Movement.FacingDirection);
         }
     }
 
