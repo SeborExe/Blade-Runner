@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+
+    private Movement movement;
+
     public FiniteStateMachine stateMachine;
 
     public D_Entity entityData;
@@ -48,7 +52,7 @@ public class Entity : MonoBehaviour
         core.LogicUpdate();
         stateMachine.currentState.LogicUpdate();
 
-        anim.SetFloat("yVelocity", core.Movement.RB.velocity.y);
+        anim.SetFloat("yVelocity", Movement.RB.velocity.y);
 
         if (Time.time >= lastDamageTime + entityData.stunRecoveryTime)
         {
@@ -78,8 +82,8 @@ public class Entity : MonoBehaviour
 
     public virtual void DamageHop(float velocity)
     {
-        velocityWorkSpace.Set(core.Movement.RB.velocity.x, velocity);
-        core.Movement.RB.velocity = velocityWorkSpace;
+        velocityWorkSpace.Set(Movement.RB.velocity.x, velocity);
+        Movement.RB.velocity = velocityWorkSpace;
 
         //Flip after take damage
         //if (facingDirection == GameObject.Find("Player").GetComponent<PlayerController>().facingDirection)
@@ -99,7 +103,7 @@ public class Entity : MonoBehaviour
     {
         if (core != null)
         {
-            Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * core.Movement.FacingDirection * entityData.wallCheckDistance));
+            Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * Movement.FacingDirection * entityData.wallCheckDistance));
             Gizmos.DrawLine(ledgeCheck.position, ledgeCheck.position + (Vector3)(Vector2.down * entityData.ledgeCheckDistance));
 
             Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);

@@ -25,7 +25,7 @@ public class PlayerDashState : PlayerAbilityState
         player.InputHandler.UseDashInput();
 
         isHolding = true;
-        dashDirection = Vector2.right * core.Movement.FacingDirection;
+        dashDirection = Vector2.right * Movement.FacingDirection;
 
         Time.timeScale = playerData.holdTimeScale;
         startTime = Time.unscaledTime;
@@ -37,9 +37,9 @@ public class PlayerDashState : PlayerAbilityState
     {
         base.Exit();
 
-        if (core.Movement.currentVelocity.y > 0)
+        if (Movement.currentVelocity.y > 0)
         {
-            core.Movement.SetVelocityY(core.Movement.currentVelocity.y * playerData.dashEndYMultiplier);
+            Movement?.SetVelocityY(Movement.currentVelocity.y * playerData.dashEndYMultiplier);
         }
     }
 
@@ -49,8 +49,8 @@ public class PlayerDashState : PlayerAbilityState
 
         if(!isExitingState)
         {
-            player.Anim.SetFloat("yVelocity", core.Movement.currentVelocity.y);
-            player.Anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.currentVelocity.x));
+            player.Anim.SetFloat("yVelocity", Movement.currentVelocity.y);
+            player.Anim.SetFloat("xVelocity", Mathf.Abs(Movement.currentVelocity.x));
 
             if (isHolding)
             {
@@ -71,16 +71,16 @@ public class PlayerDashState : PlayerAbilityState
                     isHolding = false;
                     Time.timeScale = 1f;
                     startTime = Time.timeScale;
-                    core.Movement.CheckIfSchouldFlip(Mathf.RoundToInt(dashDirection.x));
+                    Movement?.CheckIfSchouldFlip(Mathf.RoundToInt(dashDirection.x));
                     player.RB.drag = playerData.drag;
-                    core.Movement.SetVelocity(playerData.dashVelocity, dashDirection);
+                    Movement?.SetVelocity(playerData.dashVelocity, dashDirection);
                     player.DashDirectionIndicator.gameObject.SetActive(false);
                     PlaceAfterImage();
                 }
             }
             else
             {
-                core.Movement.SetVelocity(playerData.dashVelocity, dashDirection);
+                Movement?.SetVelocity(playerData.dashVelocity, dashDirection);
                 CheckIfSchouldPlaceAfterImage();
 
                 if (Time.time >= startTime + playerData.dashTime)
